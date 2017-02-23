@@ -4,7 +4,7 @@ describe "Items API" do
   it "can return all items" do
      get '/api/v1/items'
 
-    expect(response).to be_a(success)
+    expect(response).to be_success
     items = JSON.parse(response.body)
     expect(items).to be_an(Array)
 
