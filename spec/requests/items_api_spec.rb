@@ -3,6 +3,7 @@ require "rails_helper"
 describe "Items API" do
   it "can return all items" do
     create_list(:item, 3)
+
     get '/api/v1/items'
 
     expect(response).to be_success
@@ -24,6 +25,7 @@ describe "Items API" do
 
   it "can return a single item" do
     item = Item.create(name: "some item", description: "some description", image_url: "some image")
+
     get "/api/v1/items/#{item.id}"
 
     expect(response).to be_success
@@ -36,5 +38,14 @@ describe "Items API" do
     expect(found_item["image_url"]).to eq(item.image_url)
     expect(found_item).to_not have_key("created_at")
     expect(found_item).to_not have_key("updated_at")
+  end
+
+  it "can delete an item" do
+    item = create(:item)
+
+    delete "/api/v1/items/#{item.id}"
+
+    expect(response).to be_success
+    expect(Item.count).to eq(0)
   end
 end
