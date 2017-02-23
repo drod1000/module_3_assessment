@@ -7,6 +7,7 @@ describe "Items API" do
     get '/api/v1/items'
 
     expect(response).to be_success
+    expect(response.status).to eq(200)
 
     found_items = JSON.parse(response.body)
 
@@ -30,6 +31,7 @@ describe "Items API" do
     get "/api/v1/items/#{item.id}"
 
     expect(response).to be_success
+    expect(response.status).to eq(200)
 
     found_item = JSON.parse(response.body)
     expect(found_item).to be_a(Hash)
@@ -47,6 +49,8 @@ describe "Items API" do
     delete "/api/v1/items/#{item.id}"
 
     expect(response).to be_success
+    expect(response.status).to eq(204)
+
     expect(Item.count).to eq(0)
   end
 
@@ -54,6 +58,7 @@ describe "Items API" do
     post "/api/v1/items?name=some_name&description=some_description&image_url=some_image"
 
     expect(response).to be_success
+    expect(response.status).to eq(201)
 
     returned_item = JSON.parse(response.body)
 
