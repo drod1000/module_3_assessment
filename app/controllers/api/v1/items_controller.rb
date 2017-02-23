@@ -10,7 +10,7 @@ class Api::V1::ItemsController < ApplicationController
 
   def create
     @item = Item.create(item_params)
-    render json @item
+    render json: @item
   end
 
   def destroy
@@ -22,6 +22,6 @@ class Api::V1::ItemsController < ApplicationController
   private
 
   def item_params
-    require(:name, :description, :image_url)
+    params.permit(:name, :description, :image_url)
   end
 end
