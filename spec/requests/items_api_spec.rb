@@ -22,7 +22,6 @@ describe "Items API" do
 
   it "can return a single item" do
     item = Item.create(name: "some item", description: "some description", image_url: "some image")
-
     get "/api/v1/items/#{item.id}"
 
     expect(response).to be_success
