@@ -1,5 +1,3 @@
-require 'best_buy_service'
-
 class SearchController < ApplicationController
   def index
     @zip_code = params[:zip_code]
