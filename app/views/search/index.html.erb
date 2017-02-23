@@ -1,6 +1,6 @@
 <h1>Stores within 25 miles of <%= @zip_code %></h1>
-<h2><%= @parsed[:total] %> Total Stores</h2>
-<% @stores.each do |store| %>
+<h2><%= @response[:total] %> Total Stores</h2>
+<% @response[:stores].each do |store| %>
   <div>
     <p>Long Name: <%= store[:name] %></p>
     <p>City: <%= store[:city] %></p>
