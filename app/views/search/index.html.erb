@@ -1,0 +1,9 @@
+<% @stores.each do |store| %>
+  <div>
+    <p>Long Name: <%= store[:name] %></p>
+    <p>City: <%= store[:city] %></p>
+    <p>Distance: <%= store[:distance] %></p>
+    <p>Phone Number: <%= store[:phone] %></p>
+    <p>Store Type: <%= store[:storeType] %></p>
+  </div>
+<% end %>
