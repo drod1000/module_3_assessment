@@ -1,0 +1,130 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.bestbuy.com/v1/stores(area(80202,25))?apiKey=tq72hpvtbbd4mue6f23kmsw2&format=json&pageSize=10&show=storeType,name,city,distance,phone
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.11.0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Access-Control-Allow-Headers:
+      - origin, x-requested-with, accept
+      Access-Control-Allow-Methods:
+      - GET
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Max-Age:
+      - '3628800'
+      Content-Type:
+      - application/json; charset=UTF-8
+      Date:
+      - Thu, 23 Feb 2017 18:05:16 GMT
+      Server:
+      - Best Buy Public APIs
+      X-Cache-Hit:
+      - 'false'
+      Content-Length:
+      - '1922'
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: |-
+        {
+          "from": 1,
+          "to": 10,
+          "currentPage": 1,
+          "total": 16,
+          "totalPages": 2,
+          "queryTime": "0.010",
+          "totalTime": "0.022",
+          "partial": false,
+          "canonicalUrl": "/v1/stores(area(\"80202\",25))?show=storeType,name,city,distance,phone&pageSize=10&format=json&apiKey=tq72hpvtbbd4mue6f23kmsw2",
+          "stores": [
+            {
+              "storeType": "Mobile SAS",
+              "name": "CHERRY CREEK MALL",
+              "city": "DENVER",
+              "distance": 3.45,
+              "phone": "303-270-9189"
+            },
+            {
+              "storeType": "Big Box",
+              "name": "BELMAR CO",
+              "city": "LAKEWOOD",
+              "distance": 5.31,
+              "phone": "303-742-8039"
+            },
+            {
+              "storeType": "Big Box",
+              "name": "COLORADO BLVD CO",
+              "city": "DENVER",
+              "distance": 5.59,
+              "phone": "303-758-5805"
+            },
+            {
+              "storeType": "Big Box",
+              "name": "DENVER WEST CO",
+              "city": "LAKEWOOD",
+              "distance": 8.39,
+              "phone": "303-273-5617"
+            },
+            {
+              "storeType": "Big Box",
+              "name": "WESTMINSTER CO",
+              "city": "WESTMINSTER",
+              "distance": 8.52,
+              "phone": "303-426-4434"
+            },
+            {
+              "storeType": "Big Box",
+              "name": "NORTHGLENN CO",
+              "city": "DENVER",
+              "distance": 9.14,
+              "phone": "303-252-8677"
+            },
+            {
+              "storeType": "Mobile SAS",
+              "name": "TOWN CENTER AURORA",
+              "city": "AURORA",
+              "distance": 9.73,
+              "phone": "303-326-0848"
+            },
+            {
+              "storeType": "Big Box",
+              "name": "AURORA CO",
+              "city": "AURORA",
+              "distance": 9.79,
+              "phone": "303-338-5797"
+            },
+            {
+              "storeType": "Big Box",
+              "name": "LITTLETON CO",
+              "city": "LAKEWOOD",
+              "distance": 10.44,
+              "phone": "303-932-7830"
+            },
+            {
+              "storeType": "Big Box",
+              "name": "SOUTHGLENN CO",
+              "city": "CENTENNIAL",
+              "distance": 11.02,
+              "phone": "303-797-3246"
+            }
+          ],
+          "warnings": "Distances are in terms of miles (default)"
+        }
+    http_version: 
+  recorded_at: Thu, 23 Feb 2017 18:05:11 GMT
+recorded_with: VCR 3.0.3
